@@ -11,17 +11,21 @@ const draw = () => {
     canvasCtx.fillStyle = "#286047";
     canvasCtx.fillRect(0, 0, innerWidth, innerHeight);
 
-    
+
     // Desenho da linha central
-    const x = innerWidth / 2 - linewidth / 2;
-    const y = 0;
-    const w = linewidth;
-    const h = innerHeight
-    
     canvasCtx.fillStyle = "#fff";
-    canvasCtx.fillRect(x, y, w, h);
+    canvasCtx.fillRect(innerWidth / 2 - linewidth / 2, 0, linewidth, innerHeight);
 
     // Desenho das raquetes
+    canvasCtx.fillRect(10, 400, linewidth, 200); //esquerda
+    canvasCtx.fillRect(innerWidth - linewidth - 10, 400, linewidth, 200); // direita 
+
+    // desenho da bolinha
+    canvasCtx.beginPath();
+    canvasCtx.arc(200, 300, 20, 0, 2 * Math.PI, false);
+    canvasCtx.fill();
+
+    // desenho do placar
 };
 
 setup();
