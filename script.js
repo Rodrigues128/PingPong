@@ -7,16 +7,16 @@ const setup = () => {
 };
 
 const draw = () => {
-    // Desenho do campo
+    // desenho do campo
     canvasCtx.fillStyle = "#286047";
     canvasCtx.fillRect(0, 0, innerWidth, innerHeight);
 
 
-    // Desenho da linha central
+    // desenho da linha central
     canvasCtx.fillStyle = "#fff";
     canvasCtx.fillRect(innerWidth / 2 - linewidth / 2, 0, linewidth, innerHeight);
 
-    // Desenho das raquetes
+    // desenho das raquetes
     canvasCtx.fillRect(10, 400, linewidth, 200); //esquerda
     canvasCtx.fillRect(innerWidth - linewidth - 10, 400, linewidth, 200); // direita 
 
@@ -26,6 +26,12 @@ const draw = () => {
     canvasCtx.fill();
 
     // desenho do placar
+    canvasCtx.font = "bold 72px Arial";
+    canvasCtx.textAlign = "center";
+    canvasCtx.textBaseline = "top";
+    canvasCtx.fillStyle = "#01341D"
+    canvasCtx.fillText("3", innerWidth / 4, 50);
+    canvasCtx.fillText("3", innerWidth / 2 + innerWidth / 4, 50);
 };
 
 setup();
